@@ -14,7 +14,7 @@ from security import authenticate, identity
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # shutdown the flask sqlalchemy tracker, but not sqlachemy tracker
-app.config['SQLALCHEMY_DATABASE_URI'] ='sqlite:///data.db' # tell the server where our database is
+# app.config['SQLALCHEMY_DATABASE_URI'] ='sqlite:///data.db' # tell the server where our database is
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///data.db')
 app.secret_key = 'viet'
 api = Api(app)
